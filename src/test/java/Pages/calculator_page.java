@@ -3,17 +3,19 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 public class calculator_page {
 
     WebDriver driver;
+    WebDriverWait wait;
 
-    public calculator_page(WebDriver driver1)
+    public calculator_page(WebDriver driver1, WebDriverWait wait)
     {
         driver = driver1;
-        driver.get("https://www.calculator.net/bmi-calculator.html");
-        driver.manage().window().maximize();
+        this.wait = wait;
+
     }
 
     public void enterAge() throws InterruptedException {
@@ -28,6 +30,8 @@ public class calculator_page {
     {
         WebElement radio1=driver.findElement(By.xpath("//tbody/tr[2]/td[2]/label[1]"));
         radio1.click();
+
+
     }
 
     public void enterHeight()
@@ -55,6 +59,7 @@ public class calculator_page {
         WebElement actual= driver.findElement(By.tagName("b"));
         String s1= actual.getText();
         Assert.assertEquals("BMI = 18.5 kg/m2",s1);
+        //driver.close();
 
     }
 
