@@ -1,7 +1,7 @@
 # new feature
 # Tags: optional
 
-
+@web
 
 Feature: BMI Calculator operations
 

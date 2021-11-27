@@ -17,7 +17,7 @@ public class BaseSteps extends TestContext {
     int pageload_time;
     String appURL;
 
-    @Before
+    @Before("@web")
     public void initialize(Scenario scenario)
     {
 
@@ -41,7 +41,8 @@ public class BaseSteps extends TestContext {
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(pageload_time)); 
         driver.get(appURL);
     }
-    @After
+
+    @After("@web")
     public void close_driver(Scenario scenario)
     {
         driver.quit();
