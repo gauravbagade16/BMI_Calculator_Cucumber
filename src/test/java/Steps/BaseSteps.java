@@ -22,6 +22,7 @@ public class BaseSteps extends TestContext {
     {
 
         try {
+            
              explicit_wait = Integer.parseInt(ConfigUtil.getPropValues("EXPLICIT_WAIT"));
              implicit_wait = Integer.parseInt(ConfigUtil.getPropValues("IMPLICIT_WAIT"));
              pageload_time = Integer.parseInt(ConfigUtil.getPropValues("PAGE_LOAD_TIMEOUT"));
